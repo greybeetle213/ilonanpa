@@ -1,0 +1,137 @@
+@font-face{
+    font-family: "sitelenpona";
+    src: url("FairfaxHD.ttf");
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "sitelenpona";
+}
+html, body{
+    height: 100%;
+}
+#ilonanpa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#pokisitelen{
+    flex-grow: 1;
+    height: 0px;
+}
+#sitelen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+}
+.pokiilo{
+    background-color: lightgrey;
+    height: 40%;
+    display: flex;
+    align-items: stretch;
+}
+/* #ilo{
+    flex-wrap: wrap;
+} */
+.pali{
+    border: 1px solid black;
+    min-height: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    flex-shrink: 0;
+    font-size: xx-large;
+}
+#palipitenponi{
+    border: 2px solid blue;
+}
+.nena{
+    flex-grow: 1;
+    font-size: xx-large;
+}
+.nanpalonpokiilo{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-items: stretch;
+}
+#ilolonpokinanpa{
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}
+#sitelenpinanpaala{
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+}
+#ilolonpokinanpa > .nena{
+    background-color: blue;
+    color: white;
+}
+.subnum{
+    color: blue;
+}
+.selectedText{
+    background-color: yellow;
+    color: blue;
+}
+.answer{
+    color: blue;
+}
+.errorText{
+    color: red
+}
+.nena[disabled]{
+    background-color: lightcoral !important; 
+}
+.yflex{
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    > * {
+        flex-grow: 1;
+    }
+}
+.xflex{
+    display: flex;
+    flex-direction: row;
+    justify-items: stretch;
+    > * {
+        flex-grow: 1;
+    }
+}
+.ansbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.besideans{
+    font-size: xx-large;
+    background-color: white;
+}
+#canvas{
+    position: fixed;
+}
+#graphinfo{
+    font-size: xx-large;
+    border: 5px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+#openGraph{
+    font-size: xx-large;
+}
+#trianglemenu{
+    flex-grow: 0;
+}
+.embedimg{
+    height: 2em;
+    float: left;
+}

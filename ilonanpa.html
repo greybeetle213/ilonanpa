@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilo nanpa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body onload="init()">
+    <div id="ilonanpa" style="display: none;">
+        <div id="graphinfo" style="display: none;">
+            <span>
+                󱤎󱤧󱥌󱤉󱥡󱥁󱥩󱥓「󱥒󱤩」󱦝󱥒󱤡󱤩󱤧󱥶󱥙󱥩󱤏󱤪󱦜󱤎󱤧󱥷󱥡󱤉󱥁󱦝󱥚󱤡󱤩󱥄󱥶󱥙󱥩󱤏󱤪󱦜
+            </span>
+            <button id="openGraph" onclick="openGraph()">
+                󱥄󱤮󱤉󱤩
+            </button>
+        </div>
+        <div id="pokisitelen">
+            <div id="sitelen">
+                <div class="pali" id="palipitenponi">
+            
+                </div>
+            </div>
+        </div>
+        <div id="nanpa" class="pokiilo" style="display: none;">
+            <div id="sitelenpinanpaala">
+                <button class="nena" id="ans" onclick="opanaenanpa('󱥁')">󱥄󱤙󱤽󱥉󱦓󱥫󱦔󱥒󱦔󱥐󱦔</button>
+                <button class="nena" onclick="openTab('loadvars')">󱥄󱤙󱤽󱥧󱥓</button>
+                <button class="nena" onclick="opanaenanpa('󱥶')">󱥶</button>
+                <button class="nena" id="xcoord" onclick="opanaenanpa('󱥒󱤩')">󱥒󱤩</button>
+            </div>
+            <div class="nanpalonpokiilo">
+                <button class="nena" onclick="opanaenanpa('󱤂')">
+                    󱤂
+                </button>
+                <button class="nena" onclick="opanaenanpa('󱥳')">
+                    󱥳
+                </button>
+                <button class="nena" onclick="opanaenanpa('󱥮')">
+                    󱥮
+                </button>
+            </div>
+            <div class="nanpalonpokiilo">
+                <button class="nena" onclick="opanaenanpa('󱤭')">
+                    󱤭
+                </button>
+                <button class="nena" onclick="opanaenanpa('󱤼')">
+                    󱤼
+                </button>
+                <button class="nena" onclick="opanaenanpa('󱤄')">
+                    󱤄
+                </button>
+            </div>
+            <div id="ilolonpokinanpa">
+                <button class="nena" id="opana" onclick="opana()">󱥄󱥌</button>
+                <button class="nena" id="backspace" onclick="owekaesitelen()">󱥄󱥶󱤉󱥠󱥳</button>
+                <button class="nena" onclick="document.getElementById('palipitenponi').innerHTML='';openTab('ilo')">󱥄󱥐</button>
+            </div>
+        </div>
+        <div id="ilo" class="pokiilo">
+            <div class="yflex" style="flex-grow: 1;">
+                <div class="xflex">
+                    <div class="yflex">
+                        <button class="nena" onclick="doOperation(add)">
+                            󱥄󱥌󱤉<span class="subnum">󱤽</span>󱥩<span class="subnum">󱤽</span>
+                        </button>
+                        <button class="nena" onclick="doOperation(subtract)">
+                            󱥄󱥶󱤉<span class="subnum">󱤽</span>󱥧<span class="subnum">󱤽</span>
+                        </button>
+                    </div>
+                    <div class="yflex">
+                        <button class="nena" onclick="doOperation(multiply)">
+                            󱥄󱤖󱤓󱤉<span class="subnum">󱤽</span>󱤬󱥫<span class="subnum">󱤽</span>
+                        </button>
+                        <button class="nena" onclick="doOperation(devide)">
+                            <span class="subnum">󱤽</span>󱥍󱤼󱥙󱤧󱤬<span class="subnum">󱤽</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="yflex">
+                    <button class="nena" onclick="doOperation(exponent)">
+                        󱤓󱥓󱤧󱥳󱤬󱥇󱤡󱥫<span class="subnum">󱤽</span>󱤡󱤓󱥓󱤧󱤖󱤟<span class="subnum">󱤽</span>󱥍󱤓󱥓󱤡󱤓󱥓󱤧󱥙
+                    </button>
+                    <button class="nena" onclick="doOperation(surd)">
+                        󱤓󱥓󱤧󱥳󱤬󱥇󱤡󱥆󱥄<span class="subnum">󱤽</span>󱤬󱥐󱤡󱥫<span class="subnum">󱤽</span>󱤡󱤓󱥓󱥄󱤖󱤟󱥍󱤼󱥙󱥍󱤓󱥓
+                    </button>
+                    <button class="nena" onclick="doOperation(log)">
+                        󱤓󱥓󱤧󱥳󱤬󱥇󱤡󱥆󱥄<span class="subnum">󱤽</span>󱤬󱥐󱤡󱥫󱥍󱤼󱥙󱤡󱤓󱥓󱥄󱤖󱤟<span class="subnum">󱤽</span>󱥍󱤓󱥓
+                    </button>  
+                </div>
+            </div>
+            <div class="yflex" style="flex-grow: 0;">
+                <button class="nena" onclick="sendConstant('󱥄󱥠󱤉󱤩󱥧󱥚󱥜󱥩󱤅󱥜󱤡󱤩󱤧󱥣󱥳󱤡󱥘󱥜󱤧󱥣󱥙',Math.PI)">
+                    󱥄󱥠󱤉󱤩󱥧󱥚󱥜󱥩󱤅󱥜󱤡󱤩󱤧󱥣󱥳󱤡󱥘󱥜󱤧󱥣󱥙
+                </button>
+                <button class="nena" onclick="sendConstant('󱤽󱤽󱥳󱤧󱥳󱤬󱥇󱤡󱥫󱥍󱤽󱤽󱥮󱤡󱤽󱤽󱥳󱤧󱤖󱤟󱥍󱤽󱥙󱥍󱤽󱤽󱥳󱤡󱥁󱦝󱤽󱤽󱥮󱤧󱤖󱤆󱤨󱤀󱤡󱤖󱤆󱥍󱤽󱤽󱥳󱤧󱥖󱤽󱤽󱥳',Math.E)">
+                    󱤽󱤽󱥳󱤧󱥳󱤬󱥇󱤡󱥫󱥍󱤽󱤽󱥮󱤡<br>󱤽󱤽󱥳󱤧󱤖󱤟󱥍󱤽󱥙󱥍󱤽󱤽󱥳󱤡󱥁󱦝
+                    <br>
+                    󱤽󱤽󱥮󱤧󱤖󱤆󱤨󱤀󱤡󱤖󱤆󱥍󱤽󱤽󱥳󱤧󱥖󱤽󱤽󱥳
+                </button>
+            </div>
+            <div class="yflex">
+                <button class="nena" id="setvarsbutton" onclick="openTab('setvars')">
+                    󱤡󱥄󱥌󱤉󱥁󱥩󱥓
+                </button>
+                <button class="nena" onclick="openTab('selopipokatuwan')">󱤎󱥍󱥘󱥍󱥒󱥮󱦖󱥳</button>
+            </div>
+        </div>
+        <div id="setvars" class="pokiilo" style="display: none;">
+            <button class="nena" onclick="setVariable('󱥓󱤽󱥳')">󱥓󱤽󱥳</button>
+            <button class="nena" onclick="setVariable('󱥓󱤽󱥮')">󱥓󱤽󱥮</button>
+            <button class="nena" onclick="setVariable('󱥓󱤽󱥮‍󱥳')">󱤽󱥮‍󱥳</button>
+            <button class="nena" onclick="openTab('ilo')" style="color: white; background-color: blue;">󱥄󱥐</button>
+        </div>
+        <div id="loadvars" class="pokiilo" style="display: none;">
+            <button class="nena" id="󱥓󱤽󱥳" disabled onclick="opanaenanpa('󱥓󱤽󱥳')">󱥓󱤽󱥳</button>
+            <button class="nena" id="󱥓󱤽󱥮" disabled onclick="opanaenanpa('󱥓󱤽󱥮')">󱥓󱤽󱥮</button>
+            <button class="nena" id="󱥓󱤽󱥮‍󱥳" disabled onclick="opanaenanpa('󱥓󱤽󱥮‍󱥳')">󱥓󱤽󱥮‍󱥳</button>
+            <button class="nena" onclick="openTab('nanpa')" style="color: white; background-color: blue;">󱥄󱥐</button>
+        </div>
+        <div id="selopipokatuwan" class="pokiilo" style="display: none; ">
+            <img src="selopipokatuwan.svg" id="trianglemenu"/>
+            <div class="yflex" style="flex-grow: 1; background-color: white;">
+                <span id="trianglequestion" style="font-size: xx-large;">󱥄󱤮󱤉󱥠󱥒󱦜󱥞󱥡󱤉󱥙󱥁󱥮󱦝</span>
+                <button onclick="toggleTriangleSide('hypotenuse')" id="hypotenuse" class="nena">󱥣󱥍󱤩󱤫</button>
+                <button onclick="toggleTriangleSide('adjacent')" class="nena" id="adjacent">󱥣󱥍󱤩󱤒</button>
+                <button onclick="toggleTriangleSide('opposite')" class="nena" id="opposite">󱥣󱥍󱤩󱤣</button>
+                <button onclick="toggleTriangleSide('angle')" class="nena" id="angle">󱥻󱥜󱥍󱥣󱥙󱤧󱤬󱤏󱥍󱤩󱤒󱥍󱤩󱤫</button>
+            </div>
+            <button class="nena" onclick="openTab('ilo')" style="color: white; background-color: blue; flex-grow: 0.2;">󱥄󱥐</button>
+        </div>
+    </div>
+    <div id="graph">
+        <div id="lines" class="xflex">
+            <button class="nena" onclick="createOpperationList()">󱤩󱥝</button>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+</body>
+</html>
