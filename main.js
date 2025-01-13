@@ -6,6 +6,23 @@ var lineCount = 0
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const graphmode = (urlParams.get('graphmode')=="true")
+if(urlParams.get("sitelenlasina")=="true"){
+    var newStyle = document.createElement('style');
+    newStyle.appendChild(document.createTextNode("\
+    *{\
+        font-family: 'sitelenjaki';\
+    }\
+    "));
+    document.head.appendChild(newStyle);
+}else{
+    var newStyle = document.createElement('style');
+    newStyle.appendChild(document.createTextNode("\
+    *{\
+        font-family: 'sitelenpona';\
+    }\
+    "));
+    document.head.appendChild(newStyle);
+}
 const tabs = ["nanpa", "ilo", "setvars", "loadvars", "selopipokatuwan"]
 function blueText(str){
     return("<span class='subnum'>"+str+"</span>")

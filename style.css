@@ -2,6 +2,10 @@
     font-family: "sitelenpona";
     src: url("FairfaxHD.ttf");
 }
+@font-face{
+    font-family: "sitelenjaki";
+    src: url("tan-seme-A.otf");
+}
 *{
     margin: 0;
     padding: 0;
